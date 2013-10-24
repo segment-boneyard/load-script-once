@@ -28,8 +28,9 @@ module.exports = function (options, callback) {
   debug('loading: %s', src);
 
   var scripts = document.getElementsByTagName('script');
+  var canonicalized = canonical(src);
   var exists = find(scripts, function (script) {
-    return canonical(script.src) === canonical(src);
+    return canonical(script.src) === canonicalized;
   });
 
   if (exists) {
