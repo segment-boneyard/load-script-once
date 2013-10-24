@@ -1,0 +1,24 @@
+{
+  "name": "load-script-once",
+  "repo": "segmentio/load-script-once",
+  "description": "Loads a script only once, calls back when ready multiple times",
+  "version": "0.0.1",
+  "keywords": [],
+  "dependencies": {
+    "component/find": "0.0.1",
+    "segmentio/load-script": "0.1.0",
+    "segmentio/memoize-async": "0.0.2",
+    "component/url": "0.1.0",
+    "visionmedia/debug": "0.7.2"
+  },
+  "development": {
+    "component/assert": "*",
+    "segmentio/after": "*",
+    "segmentio/protocol": "*"
+  },
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": [
+    "index.js"
+  ]
+}
