@@ -2,7 +2,7 @@
 describe('load-script-once', function () {
   var after = require('after');
   var assert = require('assert');
-  var load = require('load-script-once')();
+  var load = require('load-script-once');
   var protocol = require('protocol');
   var count = 10;
 
@@ -39,7 +39,7 @@ describe('load-script-once', function () {
 
   function test (url) {
     return function (done) {
-      var finished = after(count - 1, completed(url, done));
+      var finished = after(count, completed(url, done));
       for (var i = 0; i < count; i++) load(url, finished);
     };
   }
@@ -55,14 +55,14 @@ describe('load-script-once', function () {
   it('should load protocol relative options.src', function (done) {
     var url = '//ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js';
     var options = { src: url };
-    var finished = after(count - 1, completed(url, done));
+    var finished = after(count, completed(url, done));
     for (var i = 0; i < count; i++) load(options, finished);
   });
 
   it('should load from a complete options.src', function (done) {
     var url = 'http://ajax.googleapis.com/ajax/libs/dojo/1.9.1/dojo/dojo.js';
     var options = { src: url };
-    var finished = after(count - 1, completed(url, done));
+    var finished = after(count, completed(url, done));
     for (var i = 0; i < count; i++) load(options, finished);
   });
 

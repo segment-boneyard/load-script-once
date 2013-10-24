@@ -21,7 +21,7 @@ load('//www.google-analytics.com/ga.js');
 Loads in the Google Analytics library (assuming it isn't already on the page)
 
 ```js
-var load = require('load-script');
+var load = require('load-script-once');
 
 load({
   http  : 'http://www.google-analytics.com/ga.js',
@@ -34,7 +34,7 @@ Loads in the right URL depending on the protocol.
 
 ## API
 
-### loadScript(src || options, callback)
+### loadScriptOnce(src || options, callback)
   Load the given script either by passing a `src` string, or
   an `options` object:
 
