@@ -66,7 +66,6 @@ describe('load-script-once', function () {
     for (var i = 0; i < count; i++) load(options, finished);
   });
 
-
   it('should load from options.http', function (done) {
     protocol.http();
     var url = 'http://ajax.googleapis.com/ajax/libs/ext-core/3.1.0/ext-core.js';
@@ -103,5 +102,20 @@ describe('load-script-once', function () {
     function cachebusted (url) {
       return url + '?' + Math.random() + '#' + Math.random();
     }
+  });
+
+  describe('if the script has already been loaded', function(){
+    beforeEach(function(done){
+      load('./stub.js', done);
+    });
+
+    it('should still callback asynchronously', function(done){
+      var zalgo = true;
+      load('./stub.js', function(){
+        assert(!zalgo);
+        done();
+      });
+      zalgo = false;
+    });
   });
 });

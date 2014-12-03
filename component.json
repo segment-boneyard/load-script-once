@@ -9,7 +9,8 @@
     "segmentio/load-script": "0.1.0",
     "segmentio/memoize-async": "0.0.2",
     "component/url": "0.1.0",
-    "visionmedia/debug": "0.7.2"
+    "visionmedia/debug": "0.7.2",
+    "timoxley/next-tick": "0.0.2"
   },
   "development": {
     "component/assert": "*",
