@@ -2,7 +2,7 @@
   "name": "load-script-once",
   "repo": "segmentio/load-script-once",
   "description": "Loads a script only once, calls back when ready multiple times",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "keywords": [],
   "dependencies": {
     "component/find": "0.0.1",
