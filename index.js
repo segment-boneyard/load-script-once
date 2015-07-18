@@ -2,6 +2,7 @@
 var debug = require('debug')('load-script-once');
 var find = require('find');
 var load = require('load-script');
+var nextTick = require('next-tick');
 var memoize = require('memoize-async');
 var url = require('url');
 
@@ -35,7 +36,7 @@ module.exports = function (options, callback) {
 
   if (exists) {
     debug('exists: %s', src);
-    return callback();
+    return nextTick(callback);
   }
 
   load(src, callback);
